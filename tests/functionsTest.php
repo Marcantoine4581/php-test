@@ -168,7 +168,6 @@ class FonctionsTest extends TestCase
         $fileName = "test.json";
         saveToJsonFile($transformedData, $fileName);
         $result = file_get_contents('./test.json');
-        echo $result;
         $this->assertEquals($expectedResult, $result);
     }
 }

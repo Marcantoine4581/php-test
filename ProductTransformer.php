@@ -176,14 +176,14 @@ class ProductTransformer
     }
 
     // Fusion des "possible-values" pour les Bottoms.
-    private function mergeBottomsPossibleValues(&$result, $name, &$BottomsData)
+    private function mergeBottomsPossibleValues(&$result, $name, &$bottomsData)
     {
         foreach ($result as &$items) {
             if ($items[1]['name'] === $name) {
-                $mergedBottomsPossibleValues = array_values(array_unique(array_merge($items[1]['possible_values'], $BottomsData['possible_values']), SORT_REGULAR));
+                $mergedBottomsPossibleValues = array_values(array_unique(array_merge($items[1]['possible_values'], $bottomsData['possible_values']), SORT_REGULAR));
                 $mergedBottomsPossibleValuesWithoutDuplicate = $this->removeDuplicates($mergedBottomsPossibleValues);
                 $items[1]['possible_values'] = $this->sortBottomsPossibleValues($mergedBottomsPossibleValuesWithoutDuplicate);
-                $BottomsData['possible_values'] = $this->sortBottomsPossibleValues($mergedBottomsPossibleValuesWithoutDuplicate);
+                $bottomsData['possible_values'] = $this->sortBottomsPossibleValues($mergedBottomsPossibleValuesWithoutDuplicate);
             }
         }
     }
