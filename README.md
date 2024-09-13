@@ -11,6 +11,7 @@ php: v8.1.2
 Clone the repository.
 ```
 $ git clone https://github.com/Marcantoine4581/php-test.git
+$ cd php-test
 ```
 
 ## Run application
@@ -19,7 +20,7 @@ $ php main.php
 ```
 
 ## Run tests
-First, you will need to install dependencies.
+First, you will need to install dependencies with [Composer](https://getcomposer.org/download/).
 ```
 $ composer install
 
